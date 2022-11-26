@@ -1,6 +1,9 @@
 import os
 import environ
 import oscar
+import django_heroku
+
+django_heroku.settings(locals())
 
 env = environ.Env()
 
@@ -429,5 +432,3 @@ try:
     from settings_local import *
 except ImportError:
     pass
-import django_heroku
-django_heroku.settings(locals())
