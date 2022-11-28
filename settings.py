@@ -1,11 +1,11 @@
 import os
 import environ
 import oscar
-import django_on_heroku
+# import django_on_heroku
 # import django_heroku
 
 # django_heroku.settings(locals())
-django_on_heroku.settings(locals())
+# django_on_heroku.settings(locals())
 
 env = environ.Env()
 
@@ -98,6 +98,9 @@ MEDIA_ROOT = location("public/media")
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
 STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -114,7 +117,7 @@ STATICFILES_FINDERS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Make this unique, and don't share it with anybody.
-# SECRET_KEY = env.str('SECRET_KEY', default='UajFCuyjDKmWHe29neauXzHi9eZoRXr6RMbT5JyAdPiACBP6Cra2')
+SECRET_KEY = env.str('SECRET_KEY', default='+yqteU7YBw6pviKtRGoEG1bCCCE639TLaZCiH4/oR7k=')
 
 TEMPLATES = [
     {
