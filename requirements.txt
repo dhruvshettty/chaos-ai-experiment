@@ -20,6 +20,7 @@ django-extensions==3.2.1
 django-extra-views==0.14.0
 django-haystack==3.2.1
 django-heroku==0.3.1
+django-on-heroku==1.1.2
 -e git+https://github.com/django-oscar/django-oscar.git@3dee0ae8fbf017867cc82cf1e30750ebeaabcb5f#egg=django_oscar
 django-phonenumber-field==6.4.0
 django-redis==5.2.0
