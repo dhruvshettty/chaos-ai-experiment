@@ -7,6 +7,25 @@ import oscar
 # django_heroku.settings(locals())
 # django_on_heroku.settings(locals())
 
+# import sentry_sdk
+# from sentry_sdk.integrations.django import DjangoIntegration
+
+# sentry_sdk.init(
+#     dsn="https://adfca068edf44155933a979af3aad4e0@o4504244369948672.ingest.sentry.io/4504244371914752",
+#     integrations=[
+#         DjangoIntegration(),
+#     ],
+
+#     # Set traces_sample_rate to 1.0 to capture 100%
+#     # of transactions for performance monitoring.
+#     # We recommend adjusting this value in production.
+#     traces_sample_rate=1.0,
+
+#     # If you wish to associate users to errors (assuming you are using
+#     # django.contrib.auth) you may enable sending PII data.
+#     send_default_pii=True
+# )
+
 env = environ.Env()
 
 # Path helper
@@ -98,10 +117,10 @@ MEDIA_ROOT = location("public/media")
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
-PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-STATIC_URL = '/static/'
+STATIC_URL = 'public/static/'
 STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
