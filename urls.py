@@ -12,6 +12,9 @@ from apps.sitemaps import base_sitemaps
 
 admin.autodiscover()
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+    
 urlpatterns = [
     # Include admin as convenience. It's unsupported and only included
     # for developers.
@@ -25,7 +28,8 @@ urlpatterns = [
         {'sitemaps': base_sitemaps}),
     path('sitemap-<slug:section>.xml', views.sitemap,
         {'sitemaps': base_sitemaps},
-        name='django.contrib.sitemaps.views.sitemap')
+        name='django.contrib.sitemaps.views.sitemap'),
+    path('sentry-debug/', trigger_error),
 ]
 
 # Prefix Oscar URLs with language codes

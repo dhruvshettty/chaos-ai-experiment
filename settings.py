@@ -8,24 +8,24 @@ from pathlib import Path
 # django_heroku.settings(locals())
 # django_on_heroku.settings(locals())
 
-# import sentry_sdk
-# from sentry_sdk.integrations.django import DjangoIntegration
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
-# sentry_sdk.init(
-#     dsn="https://adfca068edf44155933a979af3aad4e0@o4504244369948672.ingest.sentry.io/4504244371914752",
-#     integrations=[
-#         DjangoIntegration(),
-#     ],
+sentry_sdk.init(
+    dsn="https://adfca068edf44155933a979af3aad4e0@o4504244369948672.ingest.sentry.io/4504244371914752",
+    integrations=[
+        DjangoIntegration(),
+    ],
 
-#     # Set traces_sample_rate to 1.0 to capture 100%
-#     # of transactions for performance monitoring.
-#     # We recommend adjusting this value in production.
-#     traces_sample_rate=1.0,
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
 
-#     # If you wish to associate users to errors (assuming you are using
-#     # django.contrib.auth) you may enable sending PII data.
-#     send_default_pii=True
-# )
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
 
 env = environ.Env()
 
