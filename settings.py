@@ -3,6 +3,7 @@ import environ
 import oscar
 # import django_on_heroku
 # import django_heroku
+from pathlib import Path
 
 # django_heroku.settings(locals())
 # django_on_heroku.settings(locals())
@@ -118,14 +119,15 @@ MEDIA_ROOT = location("public/media")
 MEDIA_URL = '/media/'
 
 # PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = 'public/static/'
-STATIC_ROOT = location('public/static')
+STATIC_URL = 'static/'
+STATIC_ROOT =  BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_DIRS = (
-    location('static/'),
-)
+# STATICFILES_DIRS = (
+#     location('static/'),
+# )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
