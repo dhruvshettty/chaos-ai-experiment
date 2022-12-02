@@ -122,17 +122,17 @@ MEDIA_URL = '/media/'
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-    os.path.join(BASE_DIR,  'oscar'),
-    # Add to this list all the locations containing your static files 
-)
-# STATICFILES_DIRS = (
-#     location('static/'),
+# TEMPLATE_DIRS = (
+#     os.path.join(BASE_DIR,  'templates'),
+#     os.path.join(BASE_DIR,  'oscar'),
+#     # Add to this list all the locations containing your static files 
 # )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
