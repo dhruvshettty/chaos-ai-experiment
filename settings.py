@@ -119,12 +119,17 @@ MEDIA_ROOT = location("public/media")
 MEDIA_URL = '/media/'
 
 # PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = 'static/'
-STATIC_ROOT =  BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+    os.path.join(BASE_DIR,  'oscar'),
+    # Add to this list all the locations containing your static files 
+)
 # STATICFILES_DIRS = (
 #     location('static/'),
 # )
