@@ -123,7 +123,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = location('public/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # TEMPLATE_DIRS = (
 #     os.path.join(BASE_DIR,  'templates'),
@@ -131,7 +131,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #     # Add to this list all the locations containing your static files 
 # )
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    # os.path.join(BASE_DIR, 'sandbox/public/static'),
+    location('static/'),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
